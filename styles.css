@@ -1,0 +1,58 @@
+body {
+    margin: 0; display: flex; justify-content: center;
+    align-items: center; height: 100vh; }
+.background {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url("joseph-corl-ZKI0BlXBXos-unsplash.jpg"); 
+    background-position: center; background-repeat: no-repeat; 
+    background-size: cover; z-index: -1; 
+    transition: filter 0.8s ease; }
+.carousel-container {
+    position: relative; width: 280px;
+    height: 400px; z-index: 1; }
+.glass-card {
+    width: 100%; height: 100%; background: rgba(255, 255, 255, 0.068);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.411);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px; border: 1px solid #ffffff2e;
+    display: flex; justify-content: center;
+    align-items: center; opacity: 0; transform: scale(0.9);
+    position: absolute; top: 0; left: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;  }
+.title {
+    font-size: 32px; color: rgb(255, 255, 255);
+    font-family:Arial; font-weight: 200; }
+#card1:checked ~ .card1 {
+    opacity: 1; transform: scale(1); }
+#card2:checked ~ .card2 {
+    opacity: 1; transform: scale(1); }
+#card3:checked ~ .card3 {
+    opacity: 1; transform: scale(1); }
+.glass-card:not(:checked) {
+    opacity: 0; transform: scale(0.9); }
+.glass-card:hover {
+    transform: scale(1.05); backdrop-filter: blur(8px); }
+.nav-button {
+    border: 1px solid #ffffff2e;
+    background-color: rgba(255, 255, 255, 0.363);
+    padding: 1px; font-size: 18px;
+    cursor: pointer; border-radius: 100%;
+    position: absolute; top: 50%;
+    transform: translateY(-50%); z-index: 10;
+    width: 40px; height: 40px; }
+.prev-button {
+    left: -50px; }
+.next-button {
+    right: -50px; }
+.buttons {
+    display: none; justify-content: center;margin-top: 10px; }
+.carousel-btn {
+    background-color: white; padding: 10px; margin: 0 5px;
+    cursor: pointer; border: none;
+    border-radius: 5px; font-weight: bold; }
+.carousel-btn:hover {
+    background-color: lightgray; }
+input[type="radio"] {
+    display: none; }
