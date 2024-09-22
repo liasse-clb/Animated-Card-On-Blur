@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glass cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="carousel-container">
+        <input type="radio" name="carousel" id="card1" checked>
+        <input type="radio" name="carousel" id="card2">
+        <input type="radio" name="carousel" id="card3">
+        <div class="glass-card card1" onmouseover="blurBackground()" onmouseout="unblurBackground()">
+            <h2 class="title">Card 1</h2>
+            <p class="text"></p>
+        </div>
+        <div class="glass-card card2" onmouseover="blurBackground()" onmouseout="unblurBackground()">
+            <h2 class="title">Card 2</h2>
+            <p class="text"></p>
+        </div>
+        <div class="glass-card card3" onmouseover="blurBackground()" onmouseout="unblurBackground()">
+            <h2 class="title">Card 3</h2>
+            <p class="text"></p>
+        </div>
+        <button class="nav-button prev-button" onclick="prevCard()">⟨</button>
+        <button class="nav-button next-button" onclick="nextCard()">⟩</button>
+        <script>
+            function nextCard() {
+                const card1 = document.getElementById('card1');
+                const card2 = document.getElementById('card2');
+                const card3 = document.getElementById('card3');
+                if (card1.checked) {
+                    card2.checked = true;
+                } else if (card2.checked) {
+                    card3.checked = true;
+                } else {
+                    card1.checked = true;
+                }
+            }
+            function prevCard() {
+                const card1 = document.getElementById('card1');
+                const card2 = document.getElementById('card2');
+                const card3 = document.getElementById('card3');
+
+                if (card3.checked) {
+                    card2.checked = true;
+                } else if (card2.checked) {
+                    card1.checked = true;
+                } else {
+                    card3.checked = true;
+                }
+            }
+            function blurBackground() {
+                document.querySelector('.background').style.filter = 'blur(22px)';
+            }
+            function unblurBackground() {
+                document.querySelector('.background').style.filter = 'none';
+            }
+        </script>
+</body>
+
+</html>
